@@ -17,6 +17,16 @@ body {
   width: 800px;
   }
   
+  .alkuselitys{
+  font-family: arial;
+  margin: 0;
+  position: absolute;
+
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  }
+  
   .allImages{
 
   display : none;
@@ -26,6 +36,7 @@ body {
  
   
   .Tulokset{
+  font-family: arial
   
   }
   
@@ -40,6 +51,11 @@ body {
 <body>
 
    <img class="logo" src= "Logo.png">
+   
+    <div class= "alkuselitys">
+  <p>The image below represents roads of some capital city anywhere in the world. When comparing the countries according to their Gross Domestic Product (PPP) per capita, The country has ranked either in The Top or The Lowest 30. Can you guess which one?</p>
+
+   </div>
 
   <img class= "allImages" id="0" src="Manama_Bahrain.svg">
   <img class= "allImages" id="1" src="WashingtonDC_USA.png">
