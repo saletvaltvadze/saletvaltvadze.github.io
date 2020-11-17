@@ -89,6 +89,7 @@ body {
   border-radius: 4px;
   cursor: pointer;
   margin-bottom: 30px;
+  transition-duration: 0.4s;
 
 }
 
@@ -168,7 +169,7 @@ body {
 
   <button class = button id="vaarin" onclick="PainettiinLowest()">Lowest 30</button>
   
-  <button class = button id="uusi" onclick="Uudestaan()">Next City</button>
+  <button class = button id="uusi" onclick="Uudestaan()">Next</button>
 
 
 
@@ -250,6 +251,9 @@ function Results(){
   QuestionNumber = QuestionNumber + 1;
   questionNumber.innerHTML = "";
   
+  
+   Result.innerHTML = "This is " + String(place[i])+ ". The country's ranking in the GDP chart: " + String(ranking[i]);
+
   if (oikea == true){
   pointCount = pointCount + 1;
   points.innerHTML = "Points: " + String(pointCount);
@@ -257,8 +261,6 @@ function Results(){
   } else {
   kommentti.innerHTML = "Wrong Answer!";
   }
-
-  Result.innerHTML = "This is " + String(place[i])+ ". The country's ranking in the GDP chart: " + String(ranking[i]);
 
 }
 
