@@ -3,14 +3,27 @@
  
   <title>Roads Tell</title>
 
- <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
 
   
   <style>
   
-body { 
+.logo { grid-area: logo; }
+.alkuteksti { grid-area: alkuteksti; }
+.allImages { grid-area: allImages; }
+.nappi1 { grid-area: nappi1; }
+.nappi2 { grid-area: nappi2; }
+.next {grid-area: next;}
+.Tulokset { grid-area: Tulokset; }
+.credits { grid-area: credits; }
+
+  
+html, body { 
   font-family: "Trebuchet MS", Helvetica, sans-serif;
-  text-align: center;
+  margin: auto;
+    overflow-x:hidden;
 }
 
   .rotate {
@@ -52,76 +65,92 @@ body {
      }
    }
    
-   @media (min-width: 1px) and (max-width: 999px) {
+   @media (min-width: 30px) and (max-width: 999px) {
+   
+  .grid-container {
+  display: grid;
+  grid-template-areas:
+    'logo logo'
+    'alkuteksti alkuteksti'
+    'allImages allImages'
+    'nappi1 nappi2'
+    'next next'
+    'Tulokset Tulokset'
+    'credits credits';
+
+  background-color: white;
+  padding: 1px;
+}
+
    
 
   .logo{
-  width:55%;
+  margin-left:auto;
+  margin-right:auto;
+  width: 100%;
+  margin-top: 3%;
   height: auto;
-  margin: auto;
+
   }
   
 
-  .alkuselitys{
-  font-size: 2.5vw;
-  margin: auto;
-  position: center;
-  background: white;
-  margin-bottom: 2%;
+  .alkuteksti{
+  font-size: 4vw;
+  margin:auto;
+  margin-bottom: 3%;
   }
-  
-
   
   .allImages{
-  
+
   display : none;
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 1%;
+  max-width: 150%;
+  margin-right: -50%;
+
 }
 
-.button{
-  
+.nappi1, .nappi2, .next{
   background-color: #ffffff;
   border: 1px solid #000000;
-  margin: 1px 25px;
-  padding: 10px 3px;
   color: black;
   font-size: 4.5vw;
-  width: 150px;
+  margin:auto;
+  width: 100px;
   border-radius: 4px;
   cursor: pointer;
   transition-duration: 0.4s;
   margin-bottom: 2%;
 }
 
-.button:hover{
+
+.nappi1:hover, .nappi2:hover, .next:hover {
   background-color: #000000;
   color: white;
   }
 
   
   .Tulokset{
-  font-size:3.7vw;
+  font-size:3.5vw;
 
-  margin: auto;
-  width: 90%;
+  margin-left: 1%;
+  width: 60%;
   height: auto; 
-  margin-bottom: 22%;
+  margin-bottom: 18%;
   }
   
   .Tulokset isolla{
-  font-size: 4.5vw;
+  font-size: 4vw;
   }
   
   
     .line{
+   margin:auto;
    width: 55%;
    height: auto;
   }  
   
   
   .credits{
+  text-align: center;
   font-size: 3vw;
   }
   }
@@ -144,9 +173,9 @@ body {
   }
   
 
-  
   .allImages{
-  
+  margin-left: auto;
+  margin-right: auto;
   display : none;
   width : 80%;
   height: auto;
@@ -154,7 +183,7 @@ body {
   overflow: hidden;
 }
 
-.button{
+  .nappi1, .nappi2, .next{
 
   background-color: #ffffff;
   border: 1px solid #000000;
@@ -170,7 +199,7 @@ body {
 
 }
 
-.button:hover{
+.nappi1:hover, .nappi2:hover, .next:hover{
   background-color: #000000;
   color: white;
   }
@@ -217,9 +246,9 @@ body {
    <img class="logo" src= "Logo.png">
    
    
+   <div class= "grid-container">
    
-   
-    <div class= "alkuselitys">
+    <div class= "alkuteksti">
   <p><span id = "alkujorinat"></span></p>
 
    </div>
@@ -245,14 +274,13 @@ body {
   <img class= "allImages" id="17" src="Ougadougou_BurkinaFaso.png">
   <img class= "allImages" id="18" src="PortVila_Vanuatu.svg">
   <img class= "allImages" id="19" src="Bamako_Mali.svg">
-  <br>
 
 
-  <button class = button id="oikein" onclick="PainettiinTop()">Top 30</button>
+  <button class= nappi1 id="oikein" onclick="PainettiinTop()">Top 30</button>
 
-  <button class = button id="vaarin" onclick="PainettiinLowest()">Lowest 30</button>
+  <button class= nappi2 id="vaarin" onclick="PainettiinLowest()">Lowest 30</button>
   
-  <button class = button id="uusi" onclick="Uudestaan()">Next</button>
+  <button class= next id="uusi" onclick="Uudestaan()">Next</button>
 
 
 
@@ -264,9 +292,8 @@ body {
     <p><span id="Result"></span></p> 
 </div>
 
-<img class= "line" src= "Line_1.png">
-
 <div class= "credits">
+<img class= "line" src= "Line_1.png">
   <p>sources:</p>
   <p> maps: www.openstreetmap.org </p>
   <p> GDP chart: www.worldometers.info/gdp/gdp-per-capita </p>
@@ -275,9 +302,9 @@ body {
   
 </div>
 
+</div>
 
 <script>
-
 var answer = 1;
 var oikea = true;
 var used = [];
@@ -411,7 +438,7 @@ if (searchNewNumber == true){
 
  var image = document.getElementById(i); 
 
- image.style.display = "inline";
+ image.style.display = "block";
  
  if (i < ((imageAmount-1)/2)){
  answer = 1;
