@@ -181,12 +181,12 @@ html, body {
       }
 
   .normalText{
+    margin: auto;
   text-align: center;
   font-size: 1.3vw;
-  margin: auto;
   position: center;
   width: 55%;
-  margin-bottom: 3%;
+ 
   }
   
  .normalText isolla{
@@ -199,7 +199,6 @@ html, body {
   margin-right: auto;
   width : 80%;
   height: auto;
-  margin-bottom: 1.5%;
 }
 
 .buttons{
