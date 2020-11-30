@@ -15,7 +15,7 @@ var ranking = ["23", "13", "1", "3", "15", "12", "24", "9", "22", "21", "175", "
 window.onload = function(){
 gallery.style.display = "none";
 guestbook.style.display = "none";
-alkujorinat.innerHTML = "Below you will see an image of a city. In the image you can see nothing else but the roads of this city. The city is a capital city of a country or an autonomous area, located anywhere in the world. In a chart of contries by their GDP (Gross Domestic Product) per capita, this country has ranked among 'The Poorest 30' or 'The Wealthiest 30'. Can you guess which one this city belongs? ";
+alkujorinat.innerHTML = "Below you'll see an image of a city. In the image you can see nothing else but the roads. The city is a capital city of a country or an autonomous area, located anywhere in the world. In a chart of contries by their GDP (Gross Domestic Product) per capita, this country has ranked among 'The Poorest 30' or 'The Wealthiest 30'. Can you guess which one this city belongs? ";
 NewImage();
 
 }
