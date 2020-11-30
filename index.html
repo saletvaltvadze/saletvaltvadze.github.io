@@ -10,10 +10,21 @@
 <link rel = "stylesheet"
 href = "css/allCss.css" />
 
-<style>
+
+  <style>
+  @media (min-width: 200px) and (max-width: 999px) {
+
   .allImages{
     display: none;
+    margin-bottom: 2%;
   }
+}
+@media (min-width: 1000px){
+  .allImages{
+    display: none;
+    margin-bottom: 3%;
+  }
+}
 
 </style>
 
@@ -67,6 +78,10 @@ href = "css/allCss.css" />
   <button class= buttons id="vaarin" onclick="PainettiinLowest()">Lowest 30</button>
   
   <button class= buttons id="uusi" onclick="Uudestaan()">Next</button>
+
+  <button class= buttons id="gallery" onclick="document.location='file:///home/sauli/Desktop/RoadsTell/     Website/saletvaltvadze.github.io/index.html'">Gallery</button>
+
+  <button class= buttons id="guestbook" onclick="document.location='file:///home/sauli/Desktop/RoadsTell/     Website/saletvaltvadze.github.io/index.html'">Guest Book</button>
 
 
   <div class = "normalText">

@@ -10,7 +10,7 @@ const name = document.getElementById("name");
     console.log(int);
     console.log(value);
     
-    if (int && value) {
+    if (int) {
     localStorage.setItem(int, value);
     
     location.reload();

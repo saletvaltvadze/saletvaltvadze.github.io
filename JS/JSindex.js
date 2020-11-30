@@ -13,8 +13,9 @@ var place = ["Manama, Bahrain", "Washington DC, USA", "Doha, Qatar", "Luxembourg
 var ranking = ["23", "13", "1", "3", "15", "12", "24", "9", "22", "21", "175", "181", "166", "174", "148", "182", "147", "171", "153", "164" ];
 
 window.onload = function(){
-
-alkujorinat.innerHTML = "The image below represents roads of some capital city anywhere in the world. When comparing the countries according to their Gross Domestic Product (PPP) per capita, The country has ranked either in The Top or The Lowest 30. Can you guess which one?";
+gallery.style.display = "none";
+guestbook.style.display = "none";
+alkujorinat.innerHTML = "Below you will see an image of a city. In the image you can see nothing else but the roads of this city. The city is a capital city of a country or an autonomous area, located anywhere in the world. In a chart of contries by their GDP (Gross Domestic Product) per capita, this country has ranked among 'The Poorest 30' or 'The Wealthiest 30'. Can you guess which one this city belongs? ";
 NewImage();
 
 }
@@ -138,11 +139,13 @@ if (searchNewNumber == true){
   function GameOver(){ 
   newgame = true;
   uusi.innerHTML = "Play Again";
-  alkujorinat.innerHTML = "";
-  kommentti.innerHTML = "Game Over";
+  alkujorinat.innerHTML = "Game Over. Your score was " + String(pointCount) + " points out of " + String(imageAmount) + ".";
+  gallery.style.display = "inline";
+  guestbook.style.display = "inline";
+  kommentti.innerHTML = "";
   questionNumber.innerHTML = "";
   Result.innerHTML = "";
-  points.innerHTML = "Total Score: " + String(pointCount) + "/" + String(imageAmount);
+  points.innerHTML = "Thank you for participating. You can play the game again, look up all the images in the gallery or write your comments in the guest book";
   
   image.style.display = "none";
   
