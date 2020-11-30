@@ -7,287 +7,68 @@
 <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 <meta content="utf-8" http-equiv="encoding">
 
-  
-  <style>
-  
-.logo { grid-area: logo; }
-.alkuteksti { grid-area: alkuteksti; }
-.allImages { grid-area: allImages; }
-.nappi1 { grid-area: nappi1; }
-.nappi2 { grid-area: nappi2; }
-.next {grid-area: next;}
-.Tulokset { grid-area: Tulokset; }
-.credits { grid-area: credits; }
+<link rel = "stylesheet"
+href = "css/allCss.css" />
 
-  
-html, body { 
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  margin: auto;
-  overflow-x:hidden;
-}
-
-  .rotate {
-  animation: rotation 1.7s infinite linear;
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
-}
-
-  .loader{
-     
-     position: fixed;
-     z-index: 50%;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background: white;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     }
-     
-   .loader.hidden{
-     animation: fadeOut 2s;
-     animation-fill-mode: forwards;
-     }
-     
-   @keyframes fadeOut{
-   100% {
-   opacity: 0;
-   visibility: hidden;
-     }
-   }
-    .grid-container {
-  display: grid;
-  grid-template-areas:
-    'logo logo'
-    'alkuteksti alkuteksti'
-    'allImages allImages'
-    'nappi1 nappi2'
-    'next next'
-    'Tulokset Tulokset'
-    'credits credits';
-
-  background-color: white;
-  padding: 1px;
-}
- 
-   @media (min-width: 200px) and (max-width: 999px) {
- 
-  .logo{
-  margin-left:auto;
-  margin-right:auto;
-  width: 100%;
-  margin-top: 6%;
-  height: auto;
-  margin-bottom: 3%;
-
-  }
-  
-
-  .alkuteksti{
-  font-size: vw;
-  margin:auto;
-  margin-bottom: 6%;
-  }
-  
+<style>
   .allImages{
-
-  display : none;
-  width: 170%;
-  margin-left: -40%;
-  height: auto;
-
-}
-
-.nappi1, .nappi2, .next{
-  background-color: #ffffff;
-  border: 1px solid #000000;
-  color: black;
-  font-size: 4.5vw;
-  margin:auto;
-  width: 100px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition-duration: 0.4s;
-  margin-bottom: 2%;
-}
-
-
-.nappi1:hover, .nappi2:hover, .next:hover {
-  background-color: #000000;
-  color: white;
+    display: none;
   }
-
-  
-  .Tulokset{
-  font-size:3.5vw;
-
-  margin-left: 1%;
-  width: 60%;
-  height: auto; 
-  margin-bottom: 22%;
-  }
-  
-  .Tulokset isolla{
-  font-size: 4vw;
-  }
-  
-  
-    .line{
-   margin:auto;
-   width: 55%;
-   height: auto;
-  }  
-  
-  
-  .credits{
-
-  font-size: 3vw;
-  }
-  }
-  
-  @media (min-width: 1000px) {
-  .logo{
-  display: block;
-  margin-left:auto;
-  margin-right:auto;
-  margin-top: 1%;
-  width: 80%;
-  height: auto;
-
-  }
-  
-
-  .alkuteksti{
-  text-align: center;
-  font-size: 1.3vw;
-  margin: auto;
-  position: center;
-  width: 55%;
-  margin-bottom: 3%;
-  }
-  
-
-  .allImages{
-  margin-left: auto;
-  margin-right: auto;
-  display : none;
-  width : 80%;
-  height: auto;
-  margin-bottom: 1.5%;
-}
-
-.nappi1, .nappi2, .next{
-  margin: auto;
-  background-color: #ffffff;
-  border: 1px solid #000000;
-  color: black;
-  font-size: 1.5vw;
-  width: 120px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition-duration: 0.4s;
-  margin-bottom: 2%;
-}
-
-.nappi1:hover, .nappi2:hover, .next:hover{
-  background-color: #000000;
-  color: white;
-  }
-  
-
- 
-  
-  .Tulokset{
-  text-align: center;
-  font-size:1.3vw;
-
-  margin: auto;
-  width: 60%;
-  height: auto; 
-  margin-bottom: 15%;
-  }
-  
-  .Tulokset isolla{
-  font-size: 1.8vw;
-  }
-  
-  
-    .line{
-    text-align:center;
-   width: 30%;
-   height: auto;
-  }  
-  
-  
-  .credits{
-  text-align:center;
-  font-size: 1vw;
-  }
-}
-
 </style>
 
 </head>
 
+
 <body>
 
   <div class = "loader">
-<img src=loadingscreen.png class="rotate" width="250" height="300" />
+<img src=images/loadingscreen.png class="rotate" width="250" height="300" />
 
   </div>
-  
-   <img class="logo" src= "Logo.png">
+    <div class= "grid-container">
+    
+    
+   <img class="logo" src= "images/Logo.png">
    
    
-   <div class= "grid-container">
+ 
    
-    <div class= "alkuteksti">
+    <div class= "normalText">
   <p><span id = "alkujorinat"></span></p>
 
    </div>
 
-  <img class= "allImages" id="0" src="Manama_Bahrain.svg">
-  <img class= "allImages" id="1" src="WashingtonDC_USA.png">
-  <img class= "allImages" id="2" src="Doha_Qatar.png">
-  <img class= "allImages" id="3" src="Luxembourg.svg">
-  <img class= "allImages" id="4" src="Amsterdam_Netherlands.png">
-  <img class= "allImages" id="5" src="HongKong.png">
-  <img class= "allImages" id="6" src="Ottawa_Canada.png">
-  <img class= "allImages" id="7" src="Bern_Switzerland.svg">
-  <img class= "allImages" id="8" src="Brussels_Belgium.png">
-  <img class= "allImages" id="9" src="Canberra_Australia.png">
+  <img class= "allImages" id="0" src="images/Manama_Bahrain.svg">
+  <img class= "allImages" id="1" src="images/WashingtonDC_USA.png">
+  <img class= "allImages" id="2" src="images/Doha_Qatar.png">
+  <img class= "allImages" id="3" src="images/Luxembourg.svg">
+  <img class= "allImages" id="4" src="images/Amsterdam_Netherlands.png">
+  <img class= "allImages" id="5" src="images/HongKong.png">
+  <img class= "allImages" id="6" src="images/Ottawa_Canada.png">
+  <img class= "allImages" id="7" src="images/Bern_Switzerland.svg">
+  <img class= "allImages" id="8" src="images/Brussels_Belgium.png">
+  <img class= "allImages" id="9" src="images/Canberra_Australia.png">
   
-  <img class= "allImages" id="10" src="Lome_Togo.png">
-  <img class= "allImages" id="11" src="Niamey_Niger.svg">
-  <img class= "allImages" id="12" src="Kigali_Rwanda.svg">
-  <img class= "allImages" id="13" src="Banjul_Gambia.svg">
-  <img class= "allImages" id="14" src="Bishkek_Kyrgyztan.svg">
-  <img class= "allImages" id="15" src="Kinshaha_CongoDR.png">
-  <img class= "allImages" id="16" src="Dhaka_Bangladesh.svg">
-  <img class= "allImages" id="17" src="Ougadougou_BurkinaFaso.png">
-  <img class= "allImages" id="18" src="PortVila_Vanuatu.svg">
-  <img class= "allImages" id="19" src="Bamako_Mali.svg">
+  <img class= "allImages" id="10" src="images/Lome_Togo.png">
+  <img class= "allImages" id="11" src="images/Niamey_Niger.svg">
+  <img class= "allImages" id="12" src="images/Kigali_Rwanda.svg">
+  <img class= "allImages" id="13" src="images/Banjul_Gambia.svg">
+  <img class= "allImages" id="14" src="images/Bishkek_Kyrgyztan.svg">
+  <img class= "allImages" id="15" src="images/Kinshaha_CongoDR.png">
+  <img class= "allImages" id="16" src="images/Dhaka_Bangladesh.svg">
+  <img class= "allImages" id="17" src="images/Ougadougou_BurkinaFaso.png">
+  <img class= "allImages" id="18" src="images/PortVila_Vanuatu.svg">
+  <img class= "allImages" id="19" src="images/Bamako_Mali.svg">
 
 
-  <button class= nappi1 id="oikein" onclick="PainettiinTop()">Top 30</button>
+  <button class= buttons id="oikein" onclick="PainettiinTop()">Top 30</button>
 
-  <button class= nappi2 id="vaarin" onclick="PainettiinLowest()">Lowest 30</button>
+  <button class= buttons id="vaarin" onclick="PainettiinLowest()">Lowest 30</button>
   
-  <button class= next id="uusi" onclick="Uudestaan()">Next</button>
+  <button class= buttons id="uusi" onclick="Uudestaan()">Next</button>
 
 
-
-
-  <div class = "Tulokset">
+  <div class = "normalText">
   <isolla><span id="kommentti"></span></isolla>
   <p><span id="questionNumber"></span></p> 
   <p><span id="points"></span></p> 
@@ -295,7 +76,7 @@ html, body {
 </div>
 
 <div class= "credits">
-<img class= "line" src= "Line_1.png">
+<img class= "line" src= "images/Line_1.png">
   <p>sources:</p>
   <p> maps: www.openstreetmap.org </p>
   <p> GDP chart: www.worldometers.info/gdp/gdp-per-capita </p>
@@ -305,167 +86,9 @@ html, body {
 </div>
 
 </div>
+<script src="JS/stableJS.js"></script>
 
-<script>
-var answer = 1;
-var oikea = true;
-var used = [];
-var i;
-var image;
-var imageAmount = 20;
-var QuestionNumber= 1;
-var pointCount = 0;
-var newgame = false;
-
-var place = ["Manama, Bahrain", "Washington DC, USA", "Doha, Qatar", "Luxembourg City, Luxembourg", "Amsterdam, Netherlands", "Hong Kong", "Ottawa, Canada", "Bern, Switzerland", "Brussels, Belgium", "Canberra, Australia", "Lome, Togo", "Niamey, Niger", "Kigali, Rwanda", "Banjul, Gambia", "Bishkek, Kyrgyztan", "Kinshaha, Democratic Republic of the Congo", "Dhaka, Bangladesh", "Ougadougou, Burkina Faso", "Port Vila, Vanuatu", "Bamako, Mali"];
-
-var ranking = ["23", "13", "1", "3", "15", "12", "24", "9", "22", "21", "175", "181", "166", "174", "148", "182", "147", "171", "153", "164" ];
-
-window.addEventListener("load", function(){
-   const loader = document.querySelector(".loader");
-   loader.className += " hidden";
-   });
-
-
-window.onload = function(){
-
-alkujorinat.innerHTML = "The image below represents roads of some capital city anywhere in the world. When comparing the countries according to their Gross Domestic Product (PPP) per capita, The country has ranked either in The Top or The Lowest 30. Can you guess which one?";
-NewImage();
-
-}
-
-
-function PainettiinTop(){
-
-  if (answer == 1){
-  oikea = true;
-} if (answer == 0) {
-  oikea = false;
-  }
- Results();
-}
-
-function PainettiinLowest(){
-  if (answer == 1){
-  oikea = false;
-} if (answer == 0){
-  oikea = true;
-  }
-  Results();
-  
-}
-
-function Results(){
-
-  uusi.style.display = "inline";
-  oikein.style.display = "none";
-  vaarin.style.display = "none";
-  
-  QuestionNumber = QuestionNumber + 1;
-  questionNumber.innerHTML = "";
-  
-  
-   Result.innerHTML = "This is " + String(place[i])+ ". The country's ranking in the GDP chart: " + String(ranking[i]);
-
-  if (oikea == true){
-  pointCount = pointCount + 1;
-  points.innerHTML = "Points: " + String(pointCount);
-  kommentti.innerHTML = "Correct Answer!";
-  } else {
-  kommentti.innerHTML = "Wrong Answer!";
-  }
-
-}
-
-
-function Uudestaan(){
-
-if (newgame == false){
- var previous = used[used.length-1];
- var prevImage = document.getElementById(previous);
- prevImage.style.display = "none";
- 
- 
- if (QuestionNumber-1 < imageAmount){
-
-
- NewImage();
- 
-   } else{
-  
-GameOver();
-    } 
-   }
-    else {
-   location.reload();
-   }
-}
-
-
-
-function NewImage(){
-
-  getRandomImage();
-  
-  kommentti.innerHTML = "";
-  uusi.style.display = "none";
-  oikein.style.display = "inline";
-  vaarin.style.display = "inline";
-  
-  
-  Result.innerHTML = "";
-  questionNumber.innerHTML = "Question: " + String(QuestionNumber) + "/" + String(imageAmount);
-}
-
-
-function getRandomImage(){
-
-
-i = Math.floor(Math.random()*imageAmount);
-var searchNewNumber = true;
-
-
- if (used.includes(i) == false){
-     searchNewNumber = false;
-  }
-  
-  if (searchNewNumber == false){
-  used.push(i);
-  }
-  
-if (searchNewNumber == true){
-  getRandomImage();
-
-} 
-
- var image = document.getElementById(i); 
-
- image.style.display = "block";
- 
- if (i < ((imageAmount-1)/2)){
- answer = 1;
- } else{
- answer = 0;
- }
-  
-}
-
-  function GameOver(){ 
-  newgame = true;
-  uusi.innerHTML = "Play Again";
-  alkujorinat.innerHTML = "";
-  kommentti.innerHTML = "Game Over";
-  questionNumber.innerHTML = "";
-  Result.innerHTML = "";
-  points.innerHTML = "Total Score: " + String(pointCount) + "/" + String(imageAmount);
-  
-  image.style.display = "none";
-  
-
-  }
-
-
-</script>
+<script src="JS/JSindex.js"></script>
 
 </body>
 
